@@ -7,7 +7,7 @@ const app = async (yargsObj) =>{
     if (yargsObj.create){
         console.log('c');
         const newMovie = new Movie(yargsObj.title, yargsObj.actor);
-        newMovie.add(collection);
+        await newMovie.add(collection);
     }
     else if (yargsObj.read){
         console.log('r');
@@ -17,7 +17,7 @@ const app = async (yargsObj) =>{
     else if (yargsObj.update){
         console.log('u'); 
         const updates = new Movie(yargsObj.title, yargsObj.actor);
-        updates.updateOne(collection);
+        await updates.updateOne(collection);
     }
     else if (yargsObj.delete){
         console.log('d');
