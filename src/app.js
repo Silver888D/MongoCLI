@@ -16,8 +16,9 @@ const app = async (yargsObj) =>{
     }
     else if (yargsObj.update){
         console.log('u'); 
-        const updates = new Movie(yargsObj.title, yargsObj.actor);
-        await updates.updateOne(collection);
+        const updateMovie = new Movie(yargsObj.title, yargsObj.actor);
+        const updates = new Movie(yargsObj.newTitle, yargsObj.newActor);
+        await updateMovie.updateOne(collection, updates);
     }
     else if (yargsObj.delete){
         console.log('d');

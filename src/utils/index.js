@@ -4,7 +4,7 @@ class Movie{
 
     async add(collection){await collection.insertOne(this);}
 
-    async updateOne(collection){await collection.updateOne({title: this.title}, {$set:{actor:this.newActor },});}
+    async updateOne(collection, updates){await collection.updateOne(this, {$set:{updates},});}
 
     async deleteOne(collection, yargsObj) {
         const filterObj = {};
