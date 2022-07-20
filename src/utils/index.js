@@ -4,7 +4,7 @@ class Movie{
 
     async add(collection){await collection.insertOne(this);}
 
-    async updateOne(collection){await collection.updateOne({$set:{title: this.title}}, {$set:{actor: this.actor}},);}
+    async updateOne(collection){await collection.updateOne({title: this.title}, {$set:{actor:this.actor }, });}
 
     async deleteOne(collection){await collection.deleteOne(this);}
 

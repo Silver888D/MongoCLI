@@ -21,8 +21,8 @@ const app = async (yargsObj) =>{
     }
     else if (yargsObj.delete){
         console.log('d');
-        const deletes = await collection.deleteOne(yargsObj.title, yargsObj.actor);
-        deletes.deleteOne(collection);
+        const deletes = new Movie(yargsObj.title, yargsObj.actor);
+        await deletes.deleteOne(collection);
 
     }
     else{console.log('Incorrect command');}
